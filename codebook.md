@@ -1,18 +1,102 @@
-Code Book
-Introduction
+# Code Book
 
-The script run_analysis.Rperforms the 5 steps described in the course project's definition.
+This code book summarizes the resulting data fields in tidy.txt.
 
-First, all the similar data is merged using the rbind() function. By similar, we address those files having the same number of columns and referring to the same entities.
-Then, only those columns with the mean and standard deviation measures are taken from the whole dataset. After extracting these columns, they are given the correct names, taken from features.txt.
-As activity data is addressed with values 1:6, we take the activity names and IDs from activity_labels.txt and they are substituted in the dataset.
-On the whole dataset, those columns with vague column names are corrected.
-Finally, we generate a new dataset with all the average measures for each subject and activity type (30 subjects * 6 activities = 180 rows). The output file is called averages_data.txt, and uploaded to this repository.
-Variables
+# Identifiers
 
-x_train, y_train, x_test, y_test, subject_train and subject_test contain the data from the downloaded files.
-x_data, y_data and subject_data merge the previous datasets to further analysis.
-features contains the correct names for the x_data dataset, which are applied to the column names stored in mean_and_std_features, a numeric vector used to extract the desired data.
-A similar approach is taken with activity names through the activities variable.
-all_data merges x_data, y_data and subject_data in a big dataset.
-Finally, averages_data contains the relevant averages which will be later stored in a .txt file. ddply() from the plyr package is used to apply colMeans() and ease the development.
+subject - The ID of the test subject
+activity - The type of activity performed when the corresponding measurements were taken
+Activity type corresponds to activity in Activity ID
+# Measurements
+
+activityID
+subjectID
+timeBodyAccMean-X
+timeBodyAccMean-Y
+timeBodyAccMean-Z
+timeBodyAcc-std-X
+timeBodyAcc-std-Y
+timeBodyAcc-std-Z
+timeGravityAccMean-X
+timeGravityAccMean-Y
+timeGravityAccMean-Z
+timeGravityAcc-std-X
+timeGravityAcc-std-Y
+timeGravityAcc-std-Z
+timeBodyAccJerkMean-X
+timeBodyAccJerkMean-Y
+timeBodyAccJerkMean-Z
+timeBodyAccJerk-std-X
+timeBodyAccJerk-std-Y
+timeBodyAccJerk-std-Z
+timeBodyGyroMean-X
+timeBodyGyroMean-Y
+timeBodyGyroMean-Z
+timeBodyGyro-std-X
+timeBodyGyro-std-Y
+timeBodyGyro-std-Z
+timeBodyGyroJerkMean-X
+timeBodyGyroJerkMean-Y
+timeBodyGyroJerkMean-Z
+timeBodyGyroJerk-std-X
+timeBodyGyroJerk-std-Y
+timeBodyGyroJerk-std-Z
+timeBodyAccMagnitudeMean
+timeBodyAccMagnitudeStdDev
+timeGravityAccMagnitudeMean
+timeGravityAccMagnitudeStdDev
+timeBodyAccJerkMagnitudeMean
+timeBodyAccJerkMagnitudeStdDev
+timeBodyGyroMagnitudeMean
+timeBodyGyroMagnitudeStdDev
+timeBodyGyroJerkMagnitudeMean
+timeBodyGyroJerkMagnitudeStdDev
+freqBodyAccMean-X
+freqBodyAccMean-Y
+freqBodyAccMean-Z
+freqBodyAcc-std-X
+freqBodyAcc-std-Y
+freqBodyAcc-std-Z
+freqBodyAccMeanFreq-X
+freqBodyAccMeanFreq-Y
+freqBodyAccMeanFreq-Z
+freqBodyAccJerkMean-X
+freqBodyAccJerkMean-Y
+freqBodyAccJerkMean-Z
+freqBodyAccJerk-std-X
+freqBodyAccJerk-std-Y
+freqBodyAccJerk-std-Z
+freqBodyAccJerkMeanFreq-X
+freqBodyAccJerkMeanFreq-Y
+freqBodyAccJerkMeanFreq-Z
+freqBodyGyroMean-X
+freqBodyGyroMean-Y
+freqBodyGyroMean-Z
+freqBodyGyro-std-X
+freqBodyGyro-std-Y
+freqBodyGyro-std-Z
+freqBodyGyroMeanFreq-X
+freqBodyGyroMeanFreq-Y
+freqBodyGyroMeanFreq-Z
+freqBodyAccMagnitudeMean
+freqBodyAccMagnitudeStdDev
+freqBodyAccMagnitudeMeanFreq
+freqBodyAccJerkMagnitudeMean
+freqBodyAccJerkMagnitudeStdDev
+freqBodyAccJerkMagnitudeMeanFreq
+freqBodyGyroMagnitudeMean
+freqBodyGyroMagnitudeStdDev
+freqBodyGyroMagnitudeMeanFreq
+freqBodyGyroJerkMagnitudeMean
+freqBodyGyroJerkMagnitudeStdDev
+freqBodyGyroJerkMagnitudeMeanFreq
+activity_type
+
+# Activity Type Labels
+
+WALKING (value 1): subject was walking during the test
+WALKING_UPSTAIRS (value 2): subject was walking up a staircase during the test
+WALKING_DOWNSTAIRS (value 3): subject was walking down a staircase during the test
+SITTING (value 4): subject was sitting during the test
+STANDING (value 5): subject was standing during the test
+LAYING (value 6): subject was laying down during the test
